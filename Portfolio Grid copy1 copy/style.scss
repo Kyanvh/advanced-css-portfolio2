@@ -1,0 +1,151 @@
+// mixins + variables
+@import "constants";
+
+    body{
+    background-color: $gray;
+    }
+
+    .portfolio{
+        position: relative;
+        display:grid;
+        margin:20px 100px;
+        grid-gap:20px;
+        grid-template: repeat(7, 1fr) / 1fr;
+        grid-template-areas: 
+        "1"
+        "2"
+        "3"
+        "4"
+        "5"
+        "6"
+        "7";
+        
+            &__img_1{
+                grid-area: 1;
+            }
+        
+            &__img_2{
+                grid-area: 2;
+            }
+        
+            &__img_3{
+                grid-area: 3;
+            }
+        
+            &__img_4{
+                grid-area: 4;
+            }
+        
+            &__img_5{
+                grid-area: 5;
+            }
+        
+            &__img_6{
+                grid-area: 6;
+            }
+        
+            &__img_7{
+                grid-area: 7;
+            }
+        
+            &__button_1 {
+                grid-area: 1;
+            }
+        
+            &__button_2{
+                grid-area: 2;
+            }
+        
+            &__button_3{
+                grid-area: 3;
+            }
+        
+            &__button_4{
+                grid-area: 4;
+            }
+        
+            &__button_5{
+                grid-area: 5;
+            }
+        
+            &__button_6{
+                grid-area: 6;
+            }
+        
+            &__button_7{
+                grid-area: 7;
+            }
+        }
+
+
+    
+    .portfolio{
+        div{
+            &:hover{
+                img{
+                    display:none;
+                }
+                .middle {
+                    display:block;
+
+                }
+            }
+        }
+    }
+
+    .portfolio:hover .middle {
+        opacity: 1;
+    }    
+    
+    img{
+        display:block;
+        width:100%;
+        height:auto;
+        border-radius: 10px;
+        }
+
+    .middle {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        display: none;
+        transition: .5s ease;
+        background-color: #11282f;
+        border-radius: 10px;
+    }
+
+
+
+    button {
+        font-size:20px;
+        position:relative;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        }
+
+@media screen and (min-width: 768px) {
+    body .portfolio{
+    grid-template: repeat(4,1fr) / repeat(2, 1fr);
+    grid-template-areas: 
+    "1 2"
+    "3 4"
+    "5 6"
+    "7 .";
+    }
+}
+
+@media screen and (min-width:1024px) {
+    body .portfolio{
+    grid-template: repeat(3,1fr) / repeat(3, 1fr);
+    grid-template-areas: 
+    "1 2 3"
+    "4 5 6"
+    "7 . .";
+    }
+}
